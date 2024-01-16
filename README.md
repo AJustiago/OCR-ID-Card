@@ -11,8 +11,8 @@ This project is designed to perform Optical Character Recognition (OCR) on Indon
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/ocr-indonesian-id-card.git
-    cd ocr-indonesian-id-card
+    git clone https://github.com/yAJustiago/OCR-ID-CARd.git
+    cd OCR-ID-CARD
     ```
 
 2. Install dependencies:
