@@ -1,0 +1,73 @@
+{
+    "definitions": {
+        "Color": {
+            "type": "string"
+        },
+        "Palette": {
+            "properties": {
+                "palette_name": {
+                    "items": {
+                        "$ref": "#/definitions/Color"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "info": {
+        "description": "API for OCR KTP",
+        "title": "OCR",
+        "version": "0.0.1"
+    },
+    "operationId": "getmyData",
+    "paths": {
+        "/ocr/ktp": {
+            "post": {
+                "consumes": [
+                    "multipart/form-dat"
+                ],
+                "description": "This is using docstrings for specifications.<br/>",
+                "parameters": [
+                    {
+                        "description": "The PDF file to upload.",
+                        "in": "formData",
+                        "name": "ktp",
+                        "type":"file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of colors (may be filtered by palette)",
+                        "examples": {
+                            "rgb": [
+                                "red",
+                                "green",
+                                "blue"
+                            ]
+                        },
+                        "schema": {
+                            "$ref": "#/definitions/Palette"
+                        }
+                    }
+                },
+                "summary": "Endpoint to KTP OCR ",
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "specs_route": "/ocr/apidocs/",
+    "swagger": "2.0",
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+    
+}

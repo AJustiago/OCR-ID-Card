@@ -1,0 +1,1 @@
+nginx - c custom/path/where/locate/conf
